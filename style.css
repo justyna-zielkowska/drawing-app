@@ -1,0 +1,68 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#paintArea{
+    position: relative;
+    border: 8px solid #788eff;
+    height: 70vh;
+    width: 100%;
+}
+.options{
+    height: 30vh;
+    background-color: #788eff;
+    padding: 40px
+}
+
+.tools-row{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.tools-row h5 {
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}
+
+.tools-row button {
+    padding: 12px 0;
+    border-radius: 25px;
+    border: none;
+    background-color: #ffffff;
+    font-size: 18px;
+    color: #788eff;
+
+}
+
+input[type="range"] {
+    height: 30px;
+}
+
+input[type="color"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 30px;
+    width: 70px;
+    appearance: none;
+    background-color: transparent;
+    border: none;
+    color: #000000;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border-radius: 6px;
+    border: 3px solid #000000;
+}
+input[type="color"]::-moz-color-swatch {
+    border-radius: 58px;
+    border: 3px solid #000000;
+  
+}
