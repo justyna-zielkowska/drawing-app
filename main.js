@@ -71,16 +71,16 @@ const startDrawing = (e) => {
 
 //draw function
 const drawOnCanvas = (e) => {
-    if (!is_touch_device()){
+    if (!is_touch_device()) {
         e.preventDefault();
     }
     getXY(e);
     //if user is drawing
-    if (draw_bool){
+    if (draw_bool) {
         //create a line to x and y position of cursor
         ctx.lineTo(mouseX, mouseY);
         ctx.stroke();
-        if (erase_bool){
+        if (erase_bool) {
             //destination-out draws new shape behind the existing canvas content
             ctx.globalCompositeOperation = "destination-out";
         } else {
@@ -115,6 +115,30 @@ eraseButton.addEventListener("click", () => {
     erase_bool = true;
     //set range title to erase size
     toolType.innerHTML = "Eraser";
+});
+
+//Adjust pen size
+penSize.addEventListener("input", () => {
+    //set width to range value
+    ctx.lineWidth = penSize.value;
+});
+
+//Change color
+colorButton.addEventListener("change", () => {
+    ctx.strokeStyle = colorButton.value;
+});
+
+//Change Background
+backgroundButton.addEventListener("change", () => {
+    canvas.style.backgroundColor = backgroundButton.value;
+});
+
+//Clear button
+clearButton.addEventListener("click", () => {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    canvas.style.backgroundColor = "#ffffff";
+    backgroundButton.value = "#ffffff";
+    console.log(ctx.clearRect)
 });
 
 window.onload = init();
