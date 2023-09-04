@@ -1,25 +1,25 @@
 //Initial references
-let colorRef = document.getElementsByClassName("colors");
-let canvas = document.getElementById("canvas");
-let backgroundButton = document.getElementById("color-background");
-let colorButton = document.getElementById("color-input");
-let clearButton = document.getElementById("button-clear");
-let eraseButton = document.getElementById("button-erase");
-let penButton = document.getElementById("button-pen");
-let penSize = document.getElementById("pen-slider");
-let toolType = document.getElementById("tool-type");
+const colorRef = document.getElementsByClassName("colors");
+const canvas = document.getElementById("canvas");
+const backgroundButton = document.getElementById("color-background");
+const colorButton = document.getElementById("color-input");
+const clearButton = document.getElementById("button-clear");
+const eraseButton = document.getElementById("button-erase");
+const penButton = document.getElementById("button-pen");
+const penSize = document.getElementById("pen-slider");
+const toolType = document.getElementById("tool-type");
 
 
 let erase_bool = false;
 let draw_bool = false;
 
-let ctx = canvas.getContext("2d");
+const ctx = canvas.getContext("2d");
 
 let mouseX = 0;
 let mouseY = 0;
 
-let rectLeft = canvas.getBoundingClientRect().left
-let rectTop = canvas.getBoundingClientRect().top;
+const rectLeft = canvas.getBoundingClientRect().left
+const rectTop = canvas.getBoundingClientRect().top;
 
 const init = () => {
     ctx.strokeStyle = "black";
